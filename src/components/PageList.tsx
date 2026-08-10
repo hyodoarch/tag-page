@@ -67,6 +67,7 @@ export const PageList: QuartzComponent = ({
     <ul class="section-ul">
       {list.map((page) => {
         const title = page.frontmatter?.title;
+        const subtitle = page.frontmatter?.subtitle;
         const tags = (page.frontmatter?.tags ?? []) as string[];
 
         return (
@@ -89,6 +90,9 @@ export const PageList: QuartzComponent = ({
                     {title}
                   </a>
                 </h3>
+                {subtitle && (
+                  <p class="section-subtitle">{subtitle}</p>
+                )}
               </div>
               <ul class="tags">
                 {tags.map((tag) => (
